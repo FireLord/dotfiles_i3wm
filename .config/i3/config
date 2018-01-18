@@ -88,7 +88,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -181,6 +181,9 @@ exec_always feh --bg-scale /home/aman/Pictures/wallpaper.jpg
 # For Telegram
 exec_always cd /home/aman/Downloads/Telegram && sh tg.sh
 
+# For Android studio
+bindsym $mod+shift+a exec sh /home/aman/android/android-studio/bin/studio.sh
+
 # D menu blur compton
 exec_always compton -f
 
@@ -212,7 +215,8 @@ bindsym $mod+Shift+6 move container to workspace $workspace6
 assign [class="Gnome-terminal"] $workspace1 #1. Terminal
 assign [class="Google-chrome"] $workspace2 #2. Chrome
 assign [class="Spotify"] $workspace3 #3. Music
-assign [class="TelegramDesktop"] $workspace5 #Terminal
+assign [class="jetbrains-studio"] $workspace4 #4. Music
+assign [class="TelegramDesktop"] $workspace5 #5. Telegram
 
 for_window [class="Spotify"] move to workspace $workspace3
 
@@ -222,6 +226,16 @@ bindsym $mod+Print exec --no-startup-id screenshot focused
 bindsym $mod+Shift+d exec --no-startup-id screenshot delay
 bindsym --release $mod+Shift+Print exec --no-startup-id screenshot select
 
+# media
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# brightness
+bindsym XF86MonBrightnessUp exec brightness up
+bindsym XF86MonBrightnessDown exec brightness down
+
 # Autostart
 exec --no-startup-id xfce4-power-manager &
 exec_always --no-startup-id "pkill polybar; polybar -r top"
+exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
