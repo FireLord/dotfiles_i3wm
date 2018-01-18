@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# script : better screenshots & send a notification
+
+# variables
+folder="${HOME}/Pictures/Screenshots"
+time=$(date +"%d-%m-%y_%H-%M-%S")
+
+# create a screenshots folder
+if ! [[ -d $folder ]]; then
+    mkdir -p "$folder"
+fi
+
+# function
+notify () {
+    notify-send 'Saved screenshot'
+}
+
+# options
+case "$1" in
+    "")
+        scrot "${folder}/scrot-${time}.png"
+        notify
+        ;;
+    focused)
+        scrot -u "${folder}/scrot-${time}.png"
+        notify
+        ;;
+    select)
+        scrot -s "${folder}/scrot-${time}.png"
+        notify
+        ;;
+    delay)
+        scrot -d 3 "${folder}/scrot-${time}.png"
+        notify
+        ;;
+    low)
+        scrot "${folder}/scrot-${time}.png"
+        notify
+        ;;
+esac
