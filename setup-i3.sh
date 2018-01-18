@@ -3,9 +3,6 @@
 # READ readme before running this!!!
 #
 
-# Cloning a sample setup
-git clone https://github.com/FireLord1/dotfiles_i3wm -b master dotfiles_i3wm
-
 # Making folders to avoid errors
 mkdir -p ~/.config/dunst/
 mkdir -p ~/.config/polybar/
