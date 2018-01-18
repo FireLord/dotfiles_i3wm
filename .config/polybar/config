@@ -1,0 +1,202 @@
+[colors]
+
+red    = #ec5f67
+orange = #f99157
+yellow = #fac863
+green  = #99c794
+teal   = #5fb3b3
+blue   = #6699cc
+purple = #c594c5
+brown  = #ab7967
+base00 = #1d1f21
+base03 = #969896
+base04 = #b4b7b4
+base08 = #cc6666
+base0B = #b5bd68
+
+[bar/top]
+monitor = eDP-1
+width = 100%
+height = 45
+top = true
+
+background = ${colors.base00}
+foreground = ${colors.base04}
+
+line-color = ${colors.base04}
+line-size = 16
+
+spacing = 5
+padding-right = 5
+module-margin = 2
+
+font-0 = NotoSans-Regular:size=8;-1
+font-1 = MaterialIcons:size=10;0
+font-2 = Termsynu:size=8:antialias=false;-2
+font-3 = FontAwesome:size=10;0
+
+modules-left =    i3workspaces music
+modules-center = time
+modules-right = cpu memory backlight battery
+
+[module/i3workspaces]
+type = internal/i3
+format = <label-mode> <label-state>
+index-sort = true
+
+label-focused = "  "
+label-unfocused = "  "
+label-urgent = "  "
+label-visible = "  "
+
+label-focused-foreground = ${colors.blue}
+label-focused-padding = 1
+
+label-unfocused-foreground = ${colors.base03}
+label-unfocused-padding = 1
+
+label-visible-foreground = ${colors.base03}
+label-visible-padding = 1
+
+label-urgent-foreground = ${colors.base08}
+label-urgent-padding = 1
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-foreground = ${colors.yellow}
+
+format = <ramp> <label>
+label = %percentage%%
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.green}
+
+bar-capacity-width = 10
+bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
+bar-capacity-fill = █
+bar-capacity-fill-foreground = #ddffffff
+bar-capacity-fill-font = 3
+bar-capacity-empty = █
+bar-capacity-empty-font = 3
+bar-capacity-empty-foreground = #44ffffff
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+animation-charging-foreground = ${colors.base0B}
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label> <ramp-coreload>
+label =
+format-prefix = ""
+format-prefix-foreground = ${colors.red}
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 2
+ramp-coreload-0-foreground = #aaff77
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 2
+ramp-coreload-1-foreground = #aaff77
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 2
+ramp-coreload-2-foreground = #aaff77
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 2
+ramp-coreload-3-foreground = #aaff77
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 2
+ramp-coreload-4-foreground = #fba922
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 2
+ramp-coreload-5-foreground = #fba922
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 2
+ramp-coreload-6-foreground = #ff5555
+ramp-coreload-7 = █
+ramp-coreload-7-font = 2
+ramp-coreload-7-foreground = #ff5555
+
+[module/memory]
+type = internal/memory
+format = <label> <bar-used>
+label = 
+format-prefix = ""
+format-prefix-foreground = ${colors.blue}
+
+bar-used-width = 30
+bar-used-foreground-0 = #aaff77
+bar-used-foreground-1 = #aaff77
+bar-used-foreground-2 = #fba922
+bar-used-foreground-3 = #ff5555
+bar-used-indicator = |
+bar-used-indicator-font = 6
+bar-used-indicator-foreground = #ff
+bar-used-fill = ─
+bar-used-fill-font = 6
+bar-used-empty = ─
+bar-used-empty-font = 6
+bar-used-empty-foreground = #444444
+
+[module/music]
+type = custom/script
+interval = 2
+
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.blue}
+label = %output:0:45:...%
+
+exec = ~/.config/polybar/mpris.sh
+click-left = playerctl previous
+click-middle = playerctl play-pause
+click-right = playerctl next
+
+[module/title]
+type = internal/xwindow
+
+format-prefix = " "
+format-prefix-foreground = ${colors.purple}
+
+label = "%title:0:25:...%"
+
+[module/time]
+type = internal/date
+interval = 1
+date =
+time = "%I:%M %P"
+format-prefix = "  "
+format-prefix-foreground = ${colors.red}
+label = %time% %date%
+
+[global/wm]
+margin-top = 24
+margin-bottom = 24
+
+override-redirect = true
+
+; vim:ft=dosini
