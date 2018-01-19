@@ -231,6 +231,11 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# volume
+bindsym XF86AudioMute exec --no-startup-id volume mute
+bindsym XF86AudioRaiseVolume exec --no-startup-id volume up
+bindsym XF86AudioLowerVolume exec --no-startup-id volume down
+
 # brightness
 bindsym XF86MonBrightnessUp exec brightness up
 bindsym XF86MonBrightnessDown exec brightness down
