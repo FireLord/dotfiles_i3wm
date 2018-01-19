@@ -35,7 +35,7 @@ font-1 = MaterialIcons:size=10;0
 font-2 = Termsynu:size=8:antialias=false;-2
 font-3 = FontAwesome:size=12;0
 
-modules-left =    i3workspaces music
+modules-left = locker i3workspaces music
 modules-center = time weather
 modules-right = cpu memory backlight battery
 
@@ -60,6 +60,13 @@ label-visible-padding = 1
 
 label-urgent-foreground = ${colors.base08}
 label-urgent-padding = 1
+
+[module/locker]
+type = custom/text
+content = ""
+content-foreground = ${colors.red}
+content-padding = 5
+click-left = exec betterlockscreen -l dim
 
 [module/backlight]
 type = internal/backlight
