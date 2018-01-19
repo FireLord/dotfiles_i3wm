@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# script : change brightness & send a notification
+
+# function
+notify () {
+    br=$(light)
+    notify-send.sh -p -r 22 "Brightness: $br"
+}
+
+# options
+case "$1" in
+    up)
+        light -A 5 
+        notify
+        ;;
+    down)
+        light -U 5
+        notify
+        ;;
+esac
