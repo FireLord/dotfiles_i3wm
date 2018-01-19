@@ -22,4 +22,9 @@ mv .fonts/*.* ~/.fonts/
 mv .oh-my-zsh/themes/odin.zsh-theme ~/.oh-my-zsh/themes/odin.zsh-theme
 mv .zshrc ~/.zshrc
 mv .gtkrc-2.0 ~/.gtkrc-2.0
+mv wallpapers/*.jpg ~/Pictures/
 sudo mv scripts/* /usr/local/bin/
+
+# setup betterlockscreen
+cd
+betterlockscreen -u ~/Pictures/wallpaper.jpg
