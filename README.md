@@ -11,6 +11,8 @@ List of stuff used...
  la-capitaine-icon	> a macos kind of icon pack theme
  oh-my-zsh		> a beautiful looking setup for terminal
  base16-shell		> set of colorful codes for terminal
+ i3lock-color		> improved improved screen locker - "the ricing fork of i3lock"
+ betterlockscreen	> a beautiful looking lockscreen
 ```
 
 
