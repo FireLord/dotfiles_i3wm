@@ -12,7 +12,7 @@ mkdir -p ~/.config/i3/
 mkdir -p ~/.fonts/
 
 # Replacing required stuff
-cd dotfiles_i3wm
+cd ~/dotfiles_i3wm
 mv .config/dunst/dunstrc ~/.config/dunst/dunstrc
 mv .config/polybar/* ~/.config/polybar/
 mv .config/scripts/nerdinfo.sh ~/.config/scripts/nerdinfo.sh
