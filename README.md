@@ -57,8 +57,12 @@ List of stuff used...
    > https://github.com/FireLord1/dotfiles_i3wm/blob/master/.config/polybar/weather.sh#L5
  
  6. update info here to display on terminal..
-   > https://github.com/FireLord1/dotfiles_i3wm/blob/master/.config/scripts/nerdinfo.sh
-
+   > https://github.com/FireLord1/dotfiles_i3wm/blob/master/.config/scripts/nerdinfo.sh
+ 
+ 7. Change padding size according to your resolution
+   > https://github.com/FireLord1/dotfiles_i3wm/blob/master/.config/i3/config#L39
+   450 for 1920x1080 & 350 for 1366x768
+   
 ### Credits..
 
 * https://github.com/pavanjadhaw
