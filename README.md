@@ -61,7 +61,8 @@ List of stuff used...
  
  7. Change padding size according to your resolution
    > https://github.com/FireLord1/dotfiles_i3wm/blob/master/.config/i3/config#L39
-   450 for 1920x1080 & 350 for 1366x768
+   
+     450 for 1920x1080 & 350 for 1366x768
    
 ### Credits..
 
